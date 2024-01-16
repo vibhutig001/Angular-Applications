@@ -1,0 +1,17 @@
+<!--<mat-tab-group>
+    <mat-tab label="Technology" routerLink="/technology">
+
+    </mat-tab>
+    <mat-tab label="Books" routerLink="/books">
+
+    </mat-tab>
+</mat-tab-group>-->
+
+<nav mat-tab-nav-bar [backgroundColor]="background" [tabPanel]="tabPanel">
+    <a mat-tab-link (click)="navigateTo('/technology')" [active]="isActive('/technology')">Technology</a>
+    <a mat-tab-link (click)="navigateTo('/books')" [active]="isActive('/books')">Books</a>
+    <a mat-tab-link disabled>Disabled Link</a>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+<router-outlet></router-outlet>
