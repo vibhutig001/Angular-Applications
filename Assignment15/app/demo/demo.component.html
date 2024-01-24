@@ -1,0 +1,112 @@
+<br>
+<br>
+
+<h1 id="t1"> Contack Our </h1>
+<br>
+
+
+<h1 id="t2"> Customer Support Center</h1>
+<div class="w3-container w3-margin-top">
+    <div class="imgg">
+        <img src="assets/img.jpg" alt="Snow" style="width:300px">
+    </div>
+</div>
+
+<br>
+<br>
+<div class="t3">
+    Contact Information <br><br>
+</div>
+<div class="t4">please Fill your contack information below
+</div>
+<br>
+
+<br>
+<form [formGroup]="MarvellousForm">
+    <div class="container">
+        <div class="inp1">
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input [class.is-invalid]="MarvellousForm.get('name')?.invalid" type="text" class="form-control" placeholder="First Name" formControlName="name">
+
+                <small [class.d-none]="MarvellousForm.get('name')?.valid" class="text-danger">Name is required</small>
+            </div>
+        </div>
+
+        <div class="inp2">
+            <div class="form-group">
+                <label for="exampleFormControlInput2" class="form-label"></label>
+                <input [class.is-invalid]="MarvellousForm.get('phone')?.invalid" type="text" class="form-control" placeholder="phone" formControlName="phone">
+                <small [class.d-none]="MarvellousForm.get('phone')?.valid" class="text-danger">Number is required</small>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="inp1" style="width: 100%;">
+            <div class="form-group">
+                <label for="exampleFormControlInput3" class="form-label"></label>
+                <input [class.is-invalid]="MarvellousForm.get('email')?.invalid" type="email" class="form-control" placeholder="Email" formControlName="email">
+                <small [class.d-none]="MarvellousForm.get('email')?.valid" class="text-danger">email is required</small>
+            </div>
+        </div>
+        <div class="inp2" style="width: 100%;">
+            <div class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-default dropdown-toggle" aria-controls="dropdown-basic">
+          Select State <span class="caret"></span>
+        </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" href="#">Maharashtra</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Gujarat</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Utter Pradesh</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--
+    <div class="inp2">
+        <mat-form-field style="width: 100%;">
+            <mat-label>State</mat-label>
+            <mat-select>
+                <mat-option value="option">Maharastra</mat-option>
+                <mat-option value="option">Gujarat</mat-option>
+                <mat-option value="option">Uttr Pradesh</mat-option>
+            </mat-select>
+
+        </mat-form-field>
+    </div>
+-->
+    </div>
+    <div class="main">
+        <div class="inp5">
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input [class.is-invalid]="MarvellousForm.get('city')?.invalid" type="email" class="form-control" placeholder="City" formControlName="city">
+                <small [class.d-none]="MarvellousForm.get('city')?.valid" class="text-danger">city is required</small>
+
+            </div>
+        </div>
+        <div class="inp5">
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Zip Code" formControlName="zip">
+            </div>
+        </div>
+        <div class="inp5">
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Comment" formControlName="comment">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--<div class="button">
+    <button type="button" class="btn">Submit Now!!!</button>
+</div>-->
+    <div class="button">
+        <div class="form-group">
+            <button type="button" [disabled]="!MarvellousForm.valid" class="btn btn-secondary btn-lg">Submit Now!!!</button>
+        </div>
+    </div>
+</form>
